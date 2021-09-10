@@ -17,7 +17,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int num = (int) ((Math.random() * 100)+1); 
-        int index;
+        int index, cont = 0;
         int vidas = 5;
         
         
@@ -29,16 +29,10 @@ public class Main {
             System.out.println("Ingrese un numero: ");
             index = sc.nextInt();
             if (index <= 100) {
-                if (vidas == 1){
-                    System.out.println("\nHas Perdido");
-                    System.out.println("El numero era: "+ num);
-                    break;}
-                else{
-                    if (num == index) {
-                        System.out.println("Felicidades has acertado");}    
-                    else{ vidas -= 1;
-                        System.out.println("Te quedan "+vidas + " intentos.");}
-                }           
+                cont ++;
+                if (num == index) {
+                    System.out.println("Correcto!!");
+                    System.out.println("Has realizado "+cont+" intentos.");}          
                 if (num > index)         
                     System.out.println("El número es MAYOR que "+ index);
                 else if (num < index)        
